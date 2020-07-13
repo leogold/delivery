@@ -130,3 +130,6 @@ dmypy.json
 
 # VSCODE
 .vccode/
+
+# DB
+delivery/delivery.db

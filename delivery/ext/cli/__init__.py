@@ -1,6 +1,6 @@
 import click
 from delivery.ext.db import db
-from delivery.ext.site import models
+from delivery.ext.db import models
 
 def init_app(app):
 
@@ -15,7 +15,7 @@ def init_app(app):
     @click.option("--admin", "-a", is_flag=True, default=False)
     def add_user(email, passwd, admin):
         """Adiciona novo Usuário"""
-        user = models.USER(
+        user = models.User(
             email=email,
             passwd=passwd,
             admin=admin

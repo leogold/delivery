@@ -9,7 +9,7 @@ def read(filename):
 setup (
 name="delivery",
 version="0.1.0", #major,minor,fix,
-description="Delivery app Leo",
+description="Delivery app LeoGold",
 packages=find_packages(),
 include_package_data=True,
 install_requires=read("requirements.txt"),

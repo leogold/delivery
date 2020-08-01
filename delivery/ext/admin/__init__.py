@@ -8,8 +8,8 @@ from flask import flash, Markup
 admin = Admin()
 
 def init_app(app):
-    admin.name = "Mr Cheese cake"
-    admin.template_mode = "bootstrap2"
+    admin.name = app.config.get("ADMIN_NAME", "Leo Test")
+    admin.template_mode = app.config.get("ADMIN_TEMPLATE_MODE", "bootstrap2")
     admin.init_app(app)
     
     admin.add_view(UserAdmin(User, db.session))

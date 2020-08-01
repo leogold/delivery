@@ -1,9 +1,7 @@
-def init_app(app):
-    app.config["SECRET_KEY"] = "abacate01"
-    app.config["SQLALCHEMY_DATABASE_URI"] = 'sqlite:///delivery.db'
-    app.config["FLASK_ADMIN_SWATCH"] = "Superhero"
+from dynaconf import FlaskDynaconf
 
-    if app.debug:
-        app.config['DEBUG_TB_TEMPLATE_EDITOR_ENABLED'] = True
-        app.config['DEBUG_TB_PROFILER_ENABLE'] = True
-        app.config['DEBUG_TB_INTERCEPT_REDIRECTS'] = False
+
+def init_app(app):
+    FlaskDynaconf(app)
+    app.config.load_extensions("EXTENSIONS")
+

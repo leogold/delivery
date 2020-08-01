@@ -1,0 +1,39 @@
+[default]
+DEBUG = false
+FLASK_ADMIN_SWATCH = "Superhero"
+ADMIN_NAME = "Mr. Cheesecake"
+ADMIN_TEMPLATE_MODE = "bootstrap2"
+EXTENSIONS = [
+    "delivery.ext.db:init_app",
+    "delivery.ext.admin:init_app",
+    "delivery.ext.migrate:init_app",
+    "delivery.ext.cli:init_app",
+    "delivery.ext.site:init_app",
+    "delivery.ext.hooks:init_app",
+]
+
+[development]
+DEBUG = true
+SQLALCHEMY_DATABASE_URI = 'sqlite:///delivery.db'
+SQLALCHEMY_TRACK_MODIFICATIONS = false
+FLASK_ADMIN_SWATCH = "Superhero"
+ADMIN_NAME = "Mr. Cheesecake em DEV"
+EXTENSIONS = [
+    "delivery.ext.db:init_app",
+    "delivery.ext.admin:init_app",
+    "delivery.ext.migrate:init_app",
+    "delivery.ext.cli:init_app",
+    "delivery.ext.site:init_app",
+    "delivery.ext.hooks:init_app",
+    "delivery.ext.toolbar:init_app",
+]
+
+DEBUG_TB_TEMPLATE_EDITOR_ENABLED = true
+DEBUG_TB_PROFILER_ENABLE = true
+DEBUG_TB_INTERCEPT_REDIRECTS = false
+
+
+[production]
+SQLALCHEMY_TRACK_MODIFICATIONS = false
+SQLALCHEMY_DATABASE_URI = 'mysql://....'
+
